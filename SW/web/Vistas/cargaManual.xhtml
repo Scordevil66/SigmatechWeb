@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="./template.xhtml">
+
+        <ui:define name="content">
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <!-- top tiles -->
+                <form class="form-horizontal form-label-left">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Carga Manual de Inventarios <small>Registro de inventarios</small></h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Datos básicos</h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <br />
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Equipo:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Nombre del equipo"></input>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">N° Inventario:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Escriba el número de inventario"></input>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Marca:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="form-control">
+                                            <option>Seleccione</option>
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Modelo:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="form-control">
+                                            <option>Seleccione</option>
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Serie:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="form-control">
+                                            <option>Seleccione</option>
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Servicio:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="form-control">
+                                            <option>Seleccione</option>
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Ubicación:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="form-control">
+                                            <option>Seleccione</option>
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Area:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="form-control">
+                                            <option>Seleccione</option>
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <select class="form-control">
+                                            <option>Seleccione</option>
+                                            <option>Option one</option>
+                                            <option>Option two</option>
+                                            <option>Option three</option>
+                                            <option>Option four</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Observación:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Escriba la observación"></input>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Imagen del Equipo</h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <br />
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Finalizar</h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <br />
+                                <center>   
+                                    <input class="btn btn-primary" value="Aceptar"></input>
+                                    <input class="btn btn-primary" value="Cancelar"></input>
+                                </center>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- /page content -->
+
+
+
+        </ui:define>
+
+    </ui:composition>
+
+
+</html>
+
+
+
