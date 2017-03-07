@@ -5,10 +5,13 @@
  */
 package com.app.models;
 
+import javax.faces.bean.ManagedBean;
+
 /**
  *
  * @author user
  */
+@ManagedBean
 public class Modelo_TO {
 
     private int idModelo;

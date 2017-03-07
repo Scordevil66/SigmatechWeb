@@ -5,11 +5,15 @@
  */
 package com.app.models;
 
+import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+
 /**
  *
  * @author user
  */
-public class Marca_TO {
+@ManagedBean
+public class Marca_TO implements Serializable{
 
     private int idMarca;
 

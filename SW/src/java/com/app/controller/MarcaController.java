@@ -13,20 +13,44 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.PostConstruct;
 
 /**
  *
  * @author user
  */
 public class MarcaController {
-    
-        Statement st;
+
+    Statement st;
+    private List<Marca_TO> marcas;
 
     public MarcaController() throws SQLException {
         this.st = ConexionSQL.conexion();
+        marcas = new ArrayList<>();
     }
-    
-     public List<Marca_TO> consultarMarca() throws Exception {
+
+    public List<Marca_TO> getMarcas() {
+        return marcas;
+    }
+
+    public void setMarcas(List<Marca_TO> marcas) {
+        this.marcas = marcas;
+    }
+
+    @PostConstruct
+    public void init() {
+
+        try {
+            marcas = this.consultarMarca();
+
+        } catch (Exception ex) {
+            Logger.getLogger(MarcaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public List<Marca_TO> consultarMarca() throws Exception {
 
         List<Marca_TO> marcas = new ArrayList<>();
 
@@ -62,8 +86,8 @@ public class MarcaController {
 
         try {
 
-              String sql = "select  intIdMarca, varNombreMarca "
-                    + "from marca where varNombreMarca = '"+nombre.trim()+"';";
+            String sql = "select  intIdMarca, varNombreMarca "
+                    + "from marca where varNombreMarca = '" + nombre.trim() + "';";
 
             ResultSet rs = null;
 

@@ -59,26 +59,29 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Marca:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                        <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una marca" id="SMarca"  value="#{inventarioCT.inventario.marca.idMarca}"   >
+                                        <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una marca" id="SMarca"  value="#{inventarioCT.marca.idMarca}"   >
 
                                             <f:selectItem itemLabel="Seleccione Marca" noSelectionOption="true" />
-                                            <f:selectItems  value="#{inventarioCT.marcas}" var="marca" itemLabel="#{marca.marca}" itemValue="#{marca.idMarca}"/>
-                                            <p:ajax event="change"  update="SMModelo"   listener="#{modeloCT.consultarModelos(inventarioCT.inventario.marca.idMarca)}"/>
+                                            <f:selectItems  value="#{marcaCT.marcas}" var="marca" itemLabel="#{marca.marca}" itemValue="#{marca.idMarca}"/>
+
+                                            <f:ajax execute = "SMarca" render = "SMModelo" listener="#{inventarioCT.consultarModelos(inventarioCT.marca.idMarca)}" /> 
                                         </h:selectOneMenu>
 
                                         <p:message for="SMarca"/>
                                     </div>
                                 </div>
+
                                 <div class="form-group" >
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Modelo:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12" >
                                         <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una modelo" id="SMModelo" value="#{inventarioCT.inventario.modelo.idModelo}" >
                                             <f:selectItem itemLabel="Seleccione Modelos" noSelectionOption="true"/>
-                                            <f:selectItems value="#{modeloCT.modelos}" var="modelo" itemLabel="#{modelo.nombreModelo}" itemValue="#{modelo.idModelo}"/>
+                                            <f:selectItems value="#{inventarioCT.modelos}" var="modelo" itemLabel="#{modelo.nombreModelo}" itemValue="#{modelo.idModelo}"/>
                                         </h:selectOneMenu>
                                         <p:message for="SMModelo"/>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Serie:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -185,6 +188,16 @@
                         </div>
 
                     </div>
+                </h:form>
+
+                <h:form>
+                    <h:inputText id = "inputName" value = "#{modeloCT.modelo.nombreModelo}"></h:inputText>
+                    <h:commandButton value = "Show Message">
+                        <f:ajax execute = "inputName" render = "outputMessage" />
+                    </h:commandButton>
+                    <h2><h:outputText id = "outputMessage"
+                                      value = "#{modeloCT.modelo.nombreModelo}"
+                                      /></h2>
                 </h:form>
             </div>
 

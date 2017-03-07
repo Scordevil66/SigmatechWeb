@@ -31,8 +31,8 @@ public class InventarioController {
     Statement st;
     private Inventario_TO inventario;
     private Marca_TO marca;
-    private List<Marca_TO> marcas;
-//    private List<Modelo_TO> modelos;
+//    private List<Marca_TO> marcas;
+    private List<Modelo_TO> modelos;
     private List<Serie_TO> series;
     private List<Servicio_TO> servicios;
     private List<Ubicacion_TO> ubicaciones;
@@ -54,8 +54,8 @@ public class InventarioController {
     public InventarioController() throws SQLException {
         marca = new Marca_TO();
         inventario = new Inventario_TO();
-        marcas = new ArrayList<>();
-//        modelos = new ArrayList<>();
+//        marcas = new ArrayList<>();
+        modelos = new ArrayList<>();
         series = new ArrayList<>();
         servicios = new ArrayList<>();
         ubicaciones = new ArrayList<>();
@@ -75,7 +75,7 @@ public class InventarioController {
     public void init() {
 
         try {
-            marcas = marcaCT.consultarMarca();
+//            marcas = marcaCT.consultarMarca();
             servicios = servicioCT.consultarServicio();
             ubicaciones = ubicacionCT.consultarUbicacion();
             areas = areaCT.consultarArea();
@@ -93,21 +93,21 @@ public class InventarioController {
         this.inventario = inventario;
     }
 
-    public List<Marca_TO> getMarcas() {
-        return marcas;
+//    public List<Marca_TO> getMarcas() {
+//        return marcas;
+//    }
+//
+//    public void setMarcas(List<Marca_TO> marcas) {
+//        this.marcas = marcas;
+//    }
+
+    public List<Modelo_TO> getModelos() {
+        return modelos;
     }
 
-    public void setMarcas(List<Marca_TO> marcas) {
-        this.marcas = marcas;
+    public void setModelos(List<Modelo_TO> modelos) {
+        this.modelos = modelos;
     }
-//
-//    public List<Modelo_TO> getModelos() {
-//        return modelos;
-//    }
-//
-//    public void setModelos(List<Modelo_TO> modelos) {
-//        this.modelos = modelos;
-//    }
 
     public List<Serie_TO> getSeries() {
         return series;
@@ -157,14 +157,14 @@ public class InventarioController {
         this.marca = marca;
     }
 
-//    public void consultarModelos(int idMarca) {
-//
-//        try {
-//            modelos = modeloCT.consultarModelo(idMarca);
-//        } catch (Exception ex) {
-//            Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
+    public void consultarModelos(int idMarca) {
+
+        try {
+            modelos = modeloCT.consultarModelo(idMarca);
+        } catch (Exception ex) {
+            Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public int registrarInventario(Inventario_TO inventario) throws Exception {
 

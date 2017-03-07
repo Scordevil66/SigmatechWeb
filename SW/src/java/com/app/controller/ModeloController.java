@@ -6,6 +6,7 @@
 package com.app.controller;
 
 import com.app.conexion.ConexionSQL;
+import com.app.models.Marca_TO;
 import com.app.models.Modelo_TO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +23,9 @@ import java.util.logging.Logger;
 public class ModeloController {
 
     Statement st;
-    private List<Modelo_TO> modelos;
+//    private List<Modelo_TO> modelos;
+    private Modelo_TO modelo;
+    private Marca_TO marca;
 
     public void ModeloController() throws SQLException {
         this.st = ConexionSQL.conexion();
@@ -30,26 +33,44 @@ public class ModeloController {
     }
 
     public ModeloController() {
-        modelos = new ArrayList<>();
+//        modelos = new ArrayList<>();
+        modelo = new Modelo_TO();
+        marca = new Marca_TO();
     }
 
-    public List<Modelo_TO> getModelos() {
-        return modelos;
+//    public List<Modelo_TO> getModelos() {
+//        return modelos;
+//    }
+//
+//    public void setModelos(List<Modelo_TO> modelos) {
+//        this.modelos = modelos;
+//    }
+
+    public Modelo_TO getModelo() {
+        return modelo;
     }
 
-    public void setModelos(List<Modelo_TO> modelos) {
-        this.modelos = modelos;
+    public void setModelo(Modelo_TO modelo) {
+        this.modelo = modelo;
     }
 
-    public void consultarModelos(int idMarca) {
-
-        try {
-
-            modelos = this.consultarModelo(idMarca);
-        } catch (Exception ex) {
-            Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public Marca_TO getMarca() {
+        return marca;
     }
+
+    public void setMarca(Marca_TO marca) {
+        this.marca = marca;
+    }
+
+//    public void consultarModelos(int idMarca) {
+//
+//        try {
+//
+//            modelos = this.consultarModelo(idMarca);
+//        } catch (Exception ex) {
+//            Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 
     public List<Modelo_TO> consultarModelo(int idMarca) throws Exception {
 
