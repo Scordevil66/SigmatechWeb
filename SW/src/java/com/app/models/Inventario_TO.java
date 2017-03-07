@@ -5,11 +5,13 @@
  */
 package com.app.models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public class Inventario_TO {
+public class Inventario_TO implements Serializable {
 
     private int idInventario;
 
@@ -21,7 +23,7 @@ public class Inventario_TO {
 
     private Modelo_TO modelo;
 
-    private String nInventario;
+    private String nroInventario;
 
     private EstadoInventario_TO estadoInventario;
 
@@ -41,13 +43,13 @@ public class Inventario_TO {
     public Inventario_TO() {
     }
 
-    public Inventario_TO(int idInventario, String equipo, Marca_TO marca, Serie_TO serie, Modelo_TO modelo, String nInventario, EstadoInventario_TO estadoInventario, Servicio_TO servicio, Ubicacion_TO ubicacion, String imagen, Empresa_TO empresa, Area_TO area, String Observaciones) {
+    public Inventario_TO(int idInventario, String equipo, Marca_TO marca, Serie_TO serie, Modelo_TO modelo, String nroInventario, EstadoInventario_TO estadoInventario, Servicio_TO servicio, Ubicacion_TO ubicacion, String imagen, Empresa_TO empresa, Area_TO area, String Observaciones) {
         this.idInventario = idInventario;
         this.equipo = equipo;
         this.marca = marca;
         this.serie = serie;
         this.modelo = modelo;
-        this.nInventario = nInventario;
+        this.nroInventario = nroInventario;
         this.estadoInventario = estadoInventario;
         this.servicio = servicio;
         this.ubicacion = ubicacion;
@@ -98,12 +100,12 @@ public class Inventario_TO {
         this.modelo = modelo;
     }
 
-    public String getnInventario() {
-        return nInventario;
+    public String getNroInventario() {
+        return nroInventario;
     }
 
-    public void setnInventario(String nInventario) {
-        this.nInventario = nInventario;
+    public void setNroInventario(String nroInventario) {
+        this.nroInventario = nroInventario;
     }
 
     public EstadoInventario_TO getEstadoInventario() {
@@ -164,7 +166,7 @@ public class Inventario_TO {
 
     @Override
     public String toString() {
-        return "Inventario_TO{" + "idInventario=" + idInventario + ", equipo=" + equipo + ", marca=" + marca + ", serie=" + serie + ", modelo=" + modelo + ", nInventario=" + nInventario + ", estadoInventario=" + estadoInventario + ", servicio=" + servicio + ", ubicacion=" + ubicacion + ", imagen=" + imagen + ", empresa=" + empresa + ", area=" + area + ", Observaciones=" + Observaciones + '}';
+        return "Inventario_TO{" + "nroInventario=" + nroInventario + ", equipo=" + equipo + ", marca=" + marca + ", serie=" + serie + ", modelo=" + modelo + ", nroInventario=" + nroInventario + ", estadoInventario=" + estadoInventario + ", servicio=" + servicio + ", ubicacion=" + ubicacion + ", imagen=" + imagen + ", empresa=" + empresa + ", area=" + area + ", Observaciones=" + Observaciones + '}';
     }
 
 }

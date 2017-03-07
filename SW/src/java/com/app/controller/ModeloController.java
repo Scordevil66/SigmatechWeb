@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,26 +22,52 @@ import java.util.List;
 public class ModeloController {
 
     Statement st;
+    private List<Modelo_TO> modelos;
 
-    public ModeloController() throws SQLException {
+    public void ModeloController() throws SQLException {
         this.st = ConexionSQL.conexion();
-    }
-    
-     public List<Modelo_TO> consultarModelo(int idMarca) throws Exception {
 
-        List<Modelo_TO> modelos = new ArrayList<>();
+    }
+
+    public ModeloController() {
+        modelos = new ArrayList<>();
+    }
+
+    public List<Modelo_TO> getModelos() {
+        return modelos;
+    }
+
+    public void setModelos(List<Modelo_TO> modelos) {
+        this.modelos = modelos;
+    }
+
+    public void consultarModelos(int idMarca) {
+
+        try {
+
+            modelos = this.consultarModelo(idMarca);
+        } catch (Exception ex) {
+            Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public List<Modelo_TO> consultarModelo(int idMarca) throws Exception {
+
+        ModeloController();
+
+        List<Modelo_TO> models = new ArrayList<>();
 
         try {
 
             String sql = "select  intIdModelo, intIdMarca, varNombreModelo "
-                    + "from modelo where intIdMarca = '"+idMarca+"';";
+                    + "from modelo where intIdMarca = '" + idMarca + "';";
 
             ResultSet rs = null;
 
             rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                modelos.add(new Modelo_TO(rs.getInt(1), rs.getInt(2), rs.getString(3)));
+                models.add(new Modelo_TO(rs.getInt(1), rs.getInt(2), rs.getString(3)));
 
             }
 
@@ -51,7 +79,7 @@ public class ModeloController {
             ConexionSQL.CerrarConexion();
         }
 
-        return modelos;
+        return models;
 
     }
 
@@ -61,8 +89,8 @@ public class ModeloController {
 
         try {
 
-              String sql = "select  intIdModelo,intIdMarca,  varNombreModelo  "
-                    + "from modelo where varNombreModelo = '"+nombre.trim()+"';";
+            String sql = "select  intIdModelo,intIdMarca,  varNombreModelo  "
+                    + "from modelo where varNombreModelo = '" + nombre.trim() + "';";
 
             ResultSet rs = null;
 
