@@ -94,7 +94,7 @@ public class InventarioController {
             ubicaciones = ubicacionCT.consultarUbicacion();
             areas = areaCT.consultarArea();
             estados = estadoCT.consultarEstadoInventario();
-            this.consultarInventarios();
+            inventarios = this.consultarInventarios();
         } catch (Exception ex) {
             Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -289,10 +289,12 @@ public class InventarioController {
         }
 
     }
-    
-    public void consultarInventarios() throws Exception {
-        
+
+    public List<Inventario_TO> consultarInventarios() throws Exception {
+
         InventarioController();
+
+        List<Inventario_TO> invs = new ArrayList<>();
 
         try {
 
@@ -301,14 +303,21 @@ public class InventarioController {
                     + "  u.varNomUbicacion,  LEFT(i.`longfoto`, 256),  i.`intEmpresa`,  a.varNomArea,"
                     + "  i.`varObservaciones` "
                     + " FROM `inventario` as i, marca as m, modelo as mo, series as s,"
-                    + " servicios as se, ubicacion as u, estadoinventario as e, area as a;";
+                    + " servicios as se, ubicacion as u, estadoinventario as e, area as a "
+                    + " where i.intIdMarca = m.intIdMarca\n"
+                    + "                     and i.intIdModelo = mo.intIdModelo\n"
+                    + "                     and i.intIdSerie = s.intIdSeries\n"
+                    + "                     and i.intIdServicio = se.intIdServicios\n"
+                    + "                     and i.intIdUbicacion = u.intIdUbicacion\n"
+                    + "                     and i.intIdEstadoInv = e.intId\n"
+                    + "                     and i.intArea = a.intIdArea;";
 
             ResultSet rs = null;
 
             rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                inventarios.add(new Inventario_TO(rs.getInt(1), rs.getString(2),new Marca_TO(0, rs.getString(3)), new Serie_TO(0, 0, rs.getString(4)), new Modelo_TO(0, 0, rs.getString(5)), rs.getString(6), new EstadoInventario_TO(0, rs.getString(7)), new Servicio_TO(0, rs.getString(8)), new Ubicacion_TO(0, rs.getString(9)), rs.getString(10), new Empresa_TO(), new Area_TO(0, rs.getString(12)), rs.getString(13)));
+                invs.add(new Inventario_TO(rs.getInt(1), rs.getString(2), new Marca_TO(0, rs.getString(3)), new Serie_TO(0, 0, rs.getString(4)), new Modelo_TO(0, 0, rs.getString(5)), rs.getString(6), new EstadoInventario_TO(0, rs.getString(7)), new Servicio_TO(0, rs.getString(8)), new Ubicacion_TO(0, rs.getString(9)), rs.getString(10), new Empresa_TO(), new Area_TO(0, rs.getString(12)), rs.getString(13)));
 
             }
 
@@ -319,7 +328,7 @@ public class InventarioController {
         } finally {
             ConexionSQL.CerrarConexion();
         }
-
+        return invs;
     }
 
 }

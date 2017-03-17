@@ -14,7 +14,7 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <!-- top tiles -->
-                <form class="form-horizontal form-label-left">
+                <h:form id="formularioRegistro" class="form-horizontal form-label-left">
                     <div class="col-md-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
@@ -37,26 +37,29 @@
                             <div class="x_content">
                                 <br />
 
-
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Dirección:</label>
+                                    <label  for="inputDireccion" class="control-label col-md-3 col-sm-3 col-xs-12">Dirección:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Escriba Dirección"></input>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Teléfono:</label>
-                                    <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Escriba teléfono"></input>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Email:</label>
-                                    <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Escriba email"></input>
+                                        <p:inputText required="true" requiredMessage="Ingrese dirección" class="form-control" id="inputDireccion" placeholder="Dirección" value="#{hvCT.hojaDeVida.direccion}"/>
+                                        <p:message for="inputDireccion"/>                                         
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label  for="inputTelefono" class="control-label col-md-3 col-sm-3 col-xs-12">Teléfono:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Ingrese teléfono" class="form-control" id="inputTelefono" placeholder="Teléfono" value="#{hvCT.hojaDeVida.telefono}"/>
+                                        <p:message for="inputTelefono"/>                                         
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label  for="inputEmail" class="control-label col-md-3 col-sm-3 col-xs-12">Email:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Ingrese email" class="form-control" id="inputEmail" placeholder="Email" value="#{hvCT.hojaDeVida.email}"/>
+                                        <p:message for="inputEmail"/>                                         
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -125,11 +128,13 @@
                                     <span class="section">Identificación</span>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Cod. Equipo:</label>
+                                        <label  for="inputCodEquipo" class="control-label col-md-3 col-sm-3 col-xs-12">Cod. Equipo:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el código del equipo"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el código del equipo" class="form-control" id="inputCodEquipo" placeholder="Cod. Equipo" value="#{hvCT.hojaDeVida.codigoEquipo}"/>
+                                            <p:message for="inputCodEquipo"/>                                         
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12">RS:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
@@ -142,10 +147,12 @@
                                             </select>
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Cod Prestador:</label>
+                                        <label  for="inputCodPrestador" class="control-label col-md-3 col-sm-3 col-xs-12">Cod. Prestador:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el código del prestador"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el código del prestador" class="form-control" id="inputCodPrestador" placeholder="Cod. prestador" value="#{hvCT.hojaDeVida.codigoPrestado}"/>
+                                            <p:message for="inputCodPrestador"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -771,7 +778,7 @@
                         </div>
 
                     </div>
-                </form>
+                </h:form>
             </div>
 
             <!-- /page content -->

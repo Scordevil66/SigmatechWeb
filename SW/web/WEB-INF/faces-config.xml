@@ -27,4 +27,9 @@
         <managed-bean-class>com.app.controller.MarcaController</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>hvCT</managed-bean-name>
+        <managed-bean-class>com.app.controller.HojaDeVidaController</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
 </faces-config>

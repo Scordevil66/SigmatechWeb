@@ -30,37 +30,62 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
-<!--                            <div align="right">
-                                <p:inputText class="form-control" placeholder="Buscar..." value="{campoCT.buscar}" style="width: 50%">
-                                    <p:ajax listener="{campoCT.buscarCampo()}" update="DTInventario" event="keyup"/>
-                                </p:inputText><br/>
-                            </div>-->
+                            <!--                            <div align="right">
+                                                            <p:inputText class="form-control" placeholder="Buscar..." value="{campoCT.buscar}" style="width: 50%">
+                                                                <p:ajax listener="{campoCT.buscarCampo()}" update="DTInventario" event="keyup"/>
+                                                            </p:inputText><br/>
+                                                        </div>-->
                             <p:dataTable id="DTInventario" value="#{inventarioCT.inventarios}" var="inv"  
                                          rows="10"
                                          paginator="true"
                                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                          rowsPerPageTemplate="5,10,15"
                                          emptyMessage="Campos no registrados">
-                                <p:column headerText="Nombre" sortBy="#{inv.equipo}">
+                                <p:column headerText="Nombre" >
                                     <h:outputLabel value="#{inv.equipo}"/>
                                 </p:column>
 
-                                <p:column headerText="Porcentaje" sortBy="#{inv.nroInventario}">
+                                <p:column headerText="Nro Inventario" >
                                     <h:outputLabel value="#{inv.nroInventario}"/>
                                 </p:column>
+                                <p:column headerText="Marca" >
+                                    <h:outputLabel value="#{inv.marca.marca}"/>
+                                </p:column>
+                                <p:column headerText="Modelo" >
+                                    <h:outputLabel value="#{inv.modelo.nombreModelo}"/>
+                                </p:column>
+                                <p:column headerText="Serie" >
+                                    <h:outputLabel value="#{inv.serie.numeroSerie}"/>
+                                </p:column>
+                                <p:column headerText="Servicio" >
+                                    <h:outputLabel value="#{inv.servicio.servicio}"/>
+                                </p:column>
+                                <p:column headerText="Ubicación" >
+                                    <h:outputLabel value="#{inv.ubicacion.ubicacion}"/>
+                                </p:column>
+                                <p:column headerText="Area" >
+                                    <h:outputLabel value="#{inv.area.area}"/>
+                                </p:column>
+                                <p:column headerText="Estado" >
+                                    <h:outputLabel value="#{inv.estadoInventario.estadoInventario}"/>
+                                </p:column>
+                                <p:column headerText="Observación" >
+                                    <h:outputLabel value="#{inv.observaciones}"/>
+                                </p:column>
 
-                                <p:column style="width: 60px">
+
+<!--                                <p:column style="width: 60px">
                                     <p:commandLink style="color: white; width: 100%" process="@this" update=":formularioRegistro" action="#{campoCT.seleccionarCRUD(1)}" title="Modificar" class="btn btn-block btn-info">
                                         <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>                                                               
                                         <i class="fa fa-pencil"></i> 
                                     </p:commandLink>
-                                </p:column>
-                                <p:column style="width: 60px">
-                                    <p:commandLink style="color: white; width: 100%" action="#{campoCT.eliminar()}" onclick="PrimeFaces.monitorDownload(start, stop);" process="@this" update="@form" title="Eliminar" class="btn btn-block btn-danger">
-                                        <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>
-                                        <i class="fa fa-trash"></i>                                                     
-                                    </p:commandLink>
-                                </p:column>
+                                </p:column>-->
+                                <!--                               <p:column style="width: 60px">
+                                                                    <p:commandLink style="color: white; width: 100%" action="#{campoCT.eliminar()}" onclick="PrimeFaces.monitorDownload(start, stop);" process="@this" update="@form" title="Eliminar" class="btn btn-block btn-danger">
+                                                                        <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>
+                                                                        <i class="fa fa-trash"></i>                                                     
+                                                                    </p:commandLink>
+                                                                </p:column>-->
                             </p:dataTable>
 
                         </div>
@@ -69,10 +94,6 @@
 
                 </form>
             </div>
-
-            <!-- /page content -->
-
-
 
         </ui:define>
 
