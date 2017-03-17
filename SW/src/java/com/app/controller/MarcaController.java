@@ -26,7 +26,7 @@ public class MarcaController {
     Statement st;
     private List<Marca_TO> marcas;
 
-    public MarcaController() throws SQLException {
+    public void MarcaController() throws SQLException {
         this.st = ConexionSQL.conexion();
         marcas = new ArrayList<>();
     }
@@ -51,6 +51,8 @@ public class MarcaController {
     }
 
     public List<Marca_TO> consultarMarca() throws Exception {
+        
+        MarcaController();
 
         List<Marca_TO> marcas = new ArrayList<>();
 

@@ -5,6 +5,7 @@
  */
 package com.app.models;
 
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 
 /**
@@ -12,7 +13,7 @@ import javax.faces.bean.ManagedBean;
  * @author user
  */
 @ManagedBean
-public class Modelo_TO {
+public class Modelo_TO implements Serializable{
 
     private int idModelo;
 

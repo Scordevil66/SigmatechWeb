@@ -5,11 +5,13 @@
  */
 package com.app.models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public class Serie_TO {
+public class Serie_TO implements Serializable{
 
     private int idSerie;
 
