@@ -147,7 +147,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label  for="inputCodPrestador" class="control-label col-md-3 col-sm-3 col-xs-12">Cod. Prestador:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
@@ -155,60 +155,84 @@
                                             <p:message for="inputCodPrestador"/>                                         
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Sede:</label>
+                                        <label  for="inputSede" class="control-label col-md-3 col-sm-3 col-xs-12">Sede:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la sede"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Distintivo:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba distintivo"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Serie:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la serie"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Inv. Activo:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder=""></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese sede" class="form-control" id="inputSede" placeholder="Sede" value="#{hvCT.hojaDeVida.sede}"/>
+                                            <p:message for="inputSede"/>                                         
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label  for="inputDistintivo" class="control-label col-md-3 col-sm-3 col-xs-12">Distintivo:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese distintivo" class="form-control" id="inputDistintivo" placeholder="Distintivo" value="#{hvCT.hojaDeVida.distintivo}"/>
+                                            <p:message for="inputDistintivo"/>                                         
+                                        </div>
+                                    </div>
 
+                                    <div class="form-group">
+                                        <label  for="inputSerie" class="control-label col-md-3 col-sm-3 col-xs-12">Serie:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese serie" class="form-control" id="inputSerie" placeholder="Serie" value="#{hvCT.hojaDeVida.serie}"/>
+                                            <p:message for="inputSerie"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputInvActivo" class="control-label col-md-3 col-sm-3 col-xs-12">Inv. Activo:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese Inv. Activo" class="form-control" id="inputInvActivo" placeholder="Inv. Activo" value="#{hvCT.hojaDeVida.invActivo}"/>
+                                            <p:message for="inputInvActivo"/>                                         
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="step-22">
                                     <h2 class="StepTitle">Segundo Paso</h2>
 
                                     <span class="section"> Equipo </span>
 
+
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Equipo:</label>
+                                        <label  for="inputEquipo" class="control-label col-md-3 col-sm-3 col-xs-12">Equipo:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el nombre del equipo"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese Equipo" class="form-control" id="inputEquipo" placeholder="Equipo" value="#{hvCT.hojaDeVida.equipo}"/>
+                                            <p:message for="inputEquipo"/>                                         
                                         </div>
                                     </div>
+                                    <!--aqui se colocara un select-->
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Marca:</label>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Marca:</label> 
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la marca del equipo"></input>
+                                            <select class="form-control">
+                                                <option>Seleccione</option>
+                                                <option>Option one</option>
+                                                <option>Option two</option>
+                                                <option>Option three</option>
+                                                <option>Option four</option>
+                                            </select>
                                         </div>
                                     </div>
+                                    <!--aqui se colocara un select-->
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Modelo:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el modelo del equipo"></input>
+                                            <select class="form-control">
+                                                <option>Seleccione</option>
+                                                <option>Option one</option>
+                                                <option>Option two</option>
+                                                <option>Option three</option>
+                                                <option>Option four</option>
+                                            </select>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:</label>
+                                        <label  for="inputTipo" class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el tipo del equipo"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el tipo" class="form-control" id="inputTipo" placeholder="Tipo" value="#{hvCT.hojaDeVida.tipo}"/>
+                                            <p:message for="inputTipo"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -253,111 +277,134 @@
                                     <span class="section"> Registro Histórico </span>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Forma de Adquisición:</label>
+                                        <label  for="inputForma" class="control-label col-md-3 col-sm-3 col-xs-12">Forma de Adquisición:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la Forma de Adquisición"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la Forma de Adquisición" class="form-control" id="inputForma" placeholder="Forma" value="#{hvCT.hojaDeVida.formaAdquisicion}"/>
+                                            <p:message for="inputForma"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Documento de Adquisición:</label>
+                                        <label  for="inputDocumento" class="control-label col-md-3 col-sm-3 col-xs-12">Documento de Adquisición:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Documento de Adquisición"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Documento de Adquisición" class="form-control" id="inputDocumento" placeholder="Documento" value="#{hvCT.hojaDeVida.documentoAdquisicion}"/>
+                                            <p:message for="inputDocumento"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de Compra:</label>
+                                        <label  for="inputFechaCompra" class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de Compra:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la fecha de compra"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la fecha de compra" class="form-control" id="inputFechaCompra" placeholder="Fecha Compra" value="#{hvCT.hojaDeVida.fechaCompra}"/>
+                                            <p:message for="inputFechaCompra"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputActaRecibido" class="control-label col-md-3 col-sm-3 col-xs-12">Acta de Recibido:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Acta de Recibido" class="form-control" id="inputActaRecibido" placeholder="Acta Recibido" value="#{hvCT.hojaDeVida.actaRecibido}"/>
+                                            <p:message for="inputActaRecibido"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Acta de Recibo:</label>
+                                        <label  for="inputInstalacion" class="control-label col-md-3 col-sm-3 col-xs-12">Instalación:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Acta de Recibo"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la Instalación" class="form-control" id="inputInstalacion" placeholder="Instalación" value="#{hvCT.hojaDeVida.instalacion}"/>
+                                            <p:message for="inputInstalacion"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Instalación:</label>
+                                        <label  for="inputInicioOperacion" class="control-label col-md-3 col-sm-3 col-xs-12">Inicio de Operación:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la Instalación"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la inicio de Operacion" class="form-control" id="inputInicioOperacion" placeholder="Inicio Operacion" value="#{hvCT.hojaDeVida.inicioOperacion}"/>
+                                            <p:message for="inputInicioOperacion"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Inicio de Operación:</label>
+                                        <label  for="inputVencGarantia" class="control-label col-md-3 col-sm-3 col-xs-12">Venc. Garantia:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el inicio de operación"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el venc. garantia" class="form-control" id="inputVencGarantia" placeholder="Venc. Garantia" value="#{hvCT.hojaDeVida.vencGarantia}"/>
+                                            <p:message for="inputVencGarantia"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Venc. Garantia:</label>
+                                        <label  for="inputFabricacionCosto" class="control-label col-md-3 col-sm-3 col-xs-12">Fabricación costo:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el venc. garantia"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la fabricación costo" class="form-control" id="inputFabricacionCosto" placeholder="Ingrese la fabricación costo" value="#{hvCT.hojaDeVida.vencGarantia}"/>
+                                            <p:message for="inputFabricacionCosto"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputVidaUtil" class="control-label col-md-3 col-sm-3 col-xs-12">Vida Util:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la vida util" class="form-control" id="inputVidaUtil" placeholder="Ingrese la vida util" value="#{hvCT.hojaDeVida.vidaUtil}"/>
+                                            <p:message for="inputVidaUtil"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputNombreProveedor" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Proveedor:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Nombre Proveedor" class="form-control" id="inputNombreProveedor" placeholder="Ingrese el Nombre Proveedor" value="#{hvCT.hojaDeVida.proveedor}"/>
+                                            <p:message for="inputNombreProveedor"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fabricación costo:</label>
+                                        <label  for="inputTelProveedor" class="control-label col-md-3 col-sm-3 col-xs-12">Tel. Proveedor:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la fabricación costo"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el tel. Proveedor" class="form-control" id="inputTelProveedor" placeholder="Ingrese el tel. Proveedor" value="#{hvCT.hojaDeVida.telProveedor}"/>
+                                            <p:message for="inputTelProveedor"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Vida Util:</label>
+                                        <label  for="inputCorreoProveedor" class="control-label col-md-3 col-sm-3 col-xs-12">Correo Proveedor:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la vida util"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Correo Proveedor" class="form-control" id="inputCorreoProveedor" placeholder="Ingrese el Correo Proveedor" value="#{hvCT.hojaDeVida.correoProveedor}"/>
+                                            <p:message for="inputCorreoProveedor"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputNombreRepresentante" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Representante:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Nombre Representante" class="form-control" id="inputNombreRepresentante" placeholder="Ingrese el Nombre Representante" value="#{hvCT.hojaDeVida.representante}"/>
+                                            <p:message for="inputNombreRepresentante"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Proveedor:</label>
+                                        <label  for="inputTelRepresentante" class="control-label col-md-3 col-sm-3 col-xs-12">Tel. Representante</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Nombre Proveedor"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el tel. Representante" class="form-control" id="inputTelRepresentante" placeholder="Ingrese el tel. Representante" value="#{hvCT.hojaDeVida.telRepresentante}"/>
+                                            <p:message for="inputTelRepresentante"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tel. Proveedor:</label>
+                                        <label  for="inputCorreoRepresentante" class="control-label col-md-3 col-sm-3 col-xs-12">Correo Representante</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el tel. Proveedor"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Correo Representante" class="form-control" id="inputCorreoRepresentante" placeholder="Ingrese el Correo Representante" value="#{hvCT.hojaDeVida.correoRepresentante}"/>
+                                            <p:message for="inputCorreoRepresentante"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputNombreFabricante" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Fabricante</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Nombre Fabricante" class="form-control" id="inputNombreFabricante" placeholder="Ingrese el Nombre Fabricante" value="#{hvCT.hojaDeVida.fabricante}"/>
+                                            <p:message for="inputNombreFabricante"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Correo Proveedor:</label>
+                                        <label  for="inputTelFabricante" class="control-label col-md-3 col-sm-3 col-xs-12">Tel. Fabricante</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el correo Proveedor"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el tel. Fabricante" class="form-control" id="inputTelFabricante" placeholder="Ingrese el tel. Fabricante" value="#{hvCT.hojaDeVida.telFabricante}"/>
+                                            <p:message for="inputTelFabricante"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Representante:</label>
+                                        <label  for="inputPaisFabricante" class="control-label col-md-3 col-sm-3 col-xs-12">Pais Fabricante</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Nombre Representante"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tel. Representante:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el tel. Representante"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Correo Representante:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el correo Representante"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Fabricante:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Nombre Fabricante"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tel. Fabricante:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el tel. Fabricante"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pais Fabricante:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el pais Fabricante"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Pais Fabricante" class="form-control" id="inputPaisFabricante" placeholder="Ingrese el Pais Fabricante" value="#{hvCT.hojaDeVida.pasFabricante}"/>
+                                            <p:message for="inputPaisFabricante"/>                                         
                                         </div>
                                     </div>
                                 </div>
@@ -368,84 +415,100 @@
                                     <span class="section"> Registro Técnico de Instalación </span>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fuente de Alimentación:</label>
+                                        <label  for="inputFuenteAlimentacion" class="control-label col-md-3 col-sm-3 col-xs-12">Fuente de Alimentación:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la fuente de alimentación"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la fuente de alimentación" class="form-control" id="inputFuenteAlimentacion" placeholder="Ingrese la fuente de alimentación" value="#{hvCT.hojaDeVida.fuenteAlimentacion}"/>
+                                            <p:message for="inputFuenteAlimentacion"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tec. Predominante:</label>
+                                        <label  for="inputTecPredominante" class="control-label col-md-3 col-sm-3 col-xs-12">Tec. Predominante:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Tec. Predominante"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Tec. Predominante" class="form-control" id="inputTecPredominante" placeholder="Ingrese el Tec. Predominante" value="#{hvCT.hojaDeVida.tecPredominante}"/>
+                                            <p:message for="inputTecPredominante"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voltaje Max:</label>
+                                        <label  for="inputVolMax" class="control-label col-md-3 col-sm-3 col-xs-12">Voltaje Max:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Voltaje Max"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voltaje Min:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Voltaje Minimo"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Corriente Max:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la Corriente Max"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Corriente Min:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la Corriente Min"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Potencia:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la Potencia"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Frecuencia:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la frencuencia"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Presión:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la presión"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Velocidad:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la velocidad"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Peso:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el peso"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Temperatura:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la temperatura"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Otros:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder=""></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Voltaje Max" class="form-control" id="inputVolMax" placeholder="Ingrese el Voltaje Max" value="#{hvCT.hojaDeVida.voltajeMax}"/>
+                                            <p:message for="inputVolMax"/>                                         
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label  for="inputVolMin" class="control-label col-md-3 col-sm-3 col-xs-12">Voltaje Min:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Voltaje Min" class="form-control" id="inputVolMin" placeholder="Ingrese el Voltaje Min" value="#{hvCT.hojaDeVida.voltajeMin}"/>
+                                            <p:message for="inputVolMin"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputCorrienteMax" class="control-label col-md-3 col-sm-3 col-xs-12">Corriente Max:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la Corriente Max" class="form-control" id="inputCorrienteMax" placeholder="Ingrese la Corriente Max" value="#{hvCT.hojaDeVida.corrienteMax}"/>
+                                            <p:message for="inputCorrienteMax"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputCorrienteMin" class="control-label col-md-3 col-sm-3 col-xs-12">Corriente Min:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la Corriente Min" class="form-control" id="inputCorrienteMin" placeholder="Ingrese la Corriente Min" value="#{hvCT.hojaDeVida.corrienteMin}"/>
+                                            <p:message for="inputCorrienteMin"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputPotencia" class="control-label col-md-3 col-sm-3 col-xs-12">Potencia:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la Potencia" class="form-control" id="inputPotencia" placeholder="Ingrese la Potencia" value="#{hvCT.hojaDeVida.potencia}"/>
+                                            <p:message for="inputPotencia"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputFrencuencia" class="control-label col-md-3 col-sm-3 col-xs-12">Frecuencia:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la frecuencia" class="form-control" id="inputFrencuencia" placeholder="Ingrese la frecuencia" value="#{hvCT.hojaDeVida.frencuencia}"/>
+                                            <p:message for="inputFrencuencia"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputPresion" class="control-label col-md-3 col-sm-3 col-xs-12">Presión:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la presion" class="form-control" id="inputPresion" placeholder="Ingrese la presion" value="#{hvCT.hojaDeVida.presion}"/>
+                                            <p:message for="inputPresion"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputVelocidad" class="control-label col-md-3 col-sm-3 col-xs-12">Velocidad:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la velocidad" class="form-control" id="inputVelocidad" placeholder="Ingrese la velocidad" value="#{hvCT.hojaDeVida.velocidad}"/>
+                                            <p:message for="inputVelocidad"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputPeso" class="control-label col-md-3 col-sm-3 col-xs-12">Peso:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el peso" class="form-control" id="inputPeso" placeholder="Ingrese el peso" value="#{hvCT.hojaDeVida.peso}"/>
+                                            <p:message for="inputPeso"/>                                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  for="inputTemperatura" class="control-label col-md-3 col-sm-3 col-xs-12">Temperatura:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la temperatura" class="form-control" id="inputTemperatura" placeholder="Ingrese la temperatura" value="#{hvCT.hojaDeVida.temperatura}"/>
+                                            <p:message for="inputTemperatura"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputOtros" class="control-label col-md-3 col-sm-3 col-xs-12">Otros:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Otros" class="form-control" id="inputOtros" placeholder="Otros" value="#{hvCT.hojaDeVida.otros}"/>
+                                            <p:message for="inputOtros"/>                                         
+                                        </div>
+                                    </div>
 
                                 </div>
 
@@ -455,66 +518,79 @@
                                     <span class="section"> Registro Técnico de Funcionamiento </span>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Voltaje:</label>
+                                        <label  for="inputRangoVoltaje" class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Voltaje:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Rango de Voltaje"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Rango de Voltaje" class="form-control" id="inputRangoVoltaje" placeholder="Ingrese el Rango de Voltaje" value="#{hvCT.hojaDeVida.rangoVoltaje}"/>
+                                            <p:message for="inputRangoVoltaje"/>                                         
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Corriente:</label>
+                                        <label  for="inputRangoCorriente" class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Corriente:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Rango de Corriente"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Rango de Corriente" class="form-control" id="inputRangoCorriente" placeholder="Ingrese el Rango de Corriente" value="#{hvCT.hojaDeVida.rangoCorriente}"/>
+                                            <p:message for="inputRangoCorriente"/>                                         
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Potencia:</label>
+                                     <div class="form-group">
+                                        <label  for="inputRangoPotencia" class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Potencia:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Rango de Potencia"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Frecuencia:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escribe la Frecuencia"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Presión:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Rango de Presión"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Velocidad:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Rango de Velocidad"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Temperatura:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Rango de Temperatura"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Peso:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Peso"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Humedad:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba el Rango de Humedad"></input>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Otras Recomendaciones del Fabricante:</label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder=""></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese el Rango de Potencia" class="form-control" id="inputRangoPotencia" placeholder="Ingrese el Rango de Potencia" value="#{hvCT.hojaDeVida.rangoPotencia}"/>
+                                            <p:message for="inputRangoPotencia"/>                                         
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label  for="inputFrencuencia2" class="control-label col-md-3 col-sm-3 col-xs-12">Frenciencia:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese la frencuencia" class="form-control" id="inputFrencuencia2" placeholder="Ingrese la frencuencia" value="#{hvCT.hojaDeVida.frecuencia2}"/>
+                                            <p:message for="inputFrencuencia2"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputRangoPresion" class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Presión:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Rango de Presión" class="form-control" id="inputRangoPresion" placeholder="Ingrese el Rango de Presión" value="#{hvCT.hojaDeVida.rangoPresion}"/>
+                                            <p:message for="inputRangoPresion"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputRangoVelocidad" class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Velocidad:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Rango de Velocidad" class="form-control" id="inputRangoVelocidad" placeholder="Ingrese el Rango de Velocidad" value="#{hvCT.hojaDeVida.rangoVelocidad}"/>
+                                            <p:message for="inputRangoVelocidad"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputRangoTemperatura" class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Temperatura:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Rango de Temperatura" class="form-control" id="inputRangoTemperatura" placeholder="Ingrese el Rango de Temperatura" value="#{hvCT.hojaDeVida.rangoTemperatura}"/>
+                                            <p:message for="inputRangoTemperatura"/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  for="inputPeso2" class="control-label col-md-3 col-sm-3 col-xs-12">Peso:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Peso" class="form-control" id="inputPeso2" placeholder="Ingrese el Peso" value="#{hvCT.hojaDeVida.peso2}"/>
+                                            <p:message for="inputPeso2"/>                                         
+                                        </div>
+                                    </div>
+     
+                                    <div class="form-group">
+                                        <label  for="inputRangoHumedad" class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Humedad:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese el Rango de Humedad" class="form-control" id="inputRangoHumedad" placeholder="Ingrese el Rango de Humedad" value="#{hvCT.hojaDeVida.rangoHumedad}"/>
+                                            <p:message for="inputRangoHumedad"/>                                         
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="form-group">
+                                        <label  for="inputOtrasObservaciones" class="control-label col-md-3 col-sm-3 col-xs-12">Otras Recomendaciones del Fabricante:</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <p:inputText required="true" requiredMessage="Ingrese Otras Recomendaciones del Fabricante:" class="form-control" id="inputOtrasObservaciones" placeholder="Ingrese Otras Recomendaciones del Fabricante:" value="#{hvCT.hojaDeVida.otrasRecomendaciones}"/>
+                                            <p:message for="inputOtrasObservaciones"/>                                         
+                                        </div>
+                                    </div>
+                                   
                                 </div>
                                 <div id="step-66">
                                     <h2 class="StepTitle">Sexto Paso</h2>
