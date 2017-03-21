@@ -14,7 +14,7 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <!-- top tiles -->
-                <h:form id="formularioRegistro" class="form-horizontal form-label-left">
+                <h:form id="formularioRegistro" class="form-horizontal form-label-left" enctype="multipart/form-data">
                     <div class="col-md-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
@@ -155,11 +155,16 @@
                             </div>
                             <div class="x_content">
 
+
                                 <img src="../../resources/images/5570.jpg" alt="..." width="400px;" height="400px;"></img>
                                 <br />
-                                <center>  
-
-                                    <input class="btn btn-primary" value="Examinar"></input> </center>
+                                <p:growl id="messages" showDetail="true" />
+                                <p:fileUpload fileUploadListener="#{fileUploadBean.handleFileUpload}"  
+                                              mode="advanced"  
+                                              update="messages"   
+                                              multiple="true"  
+                                              sizeLimit="5000000"   
+                                              allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
 
 
                             </div>
@@ -182,7 +187,7 @@
                                                                              update=":formularioRegistro"
                                                                              class="btn btn-primary"/>  
                                     <p:button                         value="Cancelar"                                                                           
-                                                                             class="btn btn-primary"/> 
+                                                                      class="btn btn-primary"/> 
                                 </center>
                             </div>
                         </div>

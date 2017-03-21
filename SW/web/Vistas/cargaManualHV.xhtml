@@ -653,11 +653,12 @@
                                     <h2 class="StepTitle">Septimo Paso</h2>
 
                                     <span class="section"> Mantenimiento </span>
-
+                                    
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Periodicidad del Mantenimiento:</label>
+                                        <label  for="inputPeriodicidadMantenimiento" class="control-label col-md-3 col-sm-3 col-xs-12">Otras Recomendaciones del Fabricante:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la Periodicidad del Mantenimiento"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la Periodicidad del Mantenimiento" class="form-control" id="inputPeriodicidadMantenimiento" placeholder="Ingrese la Periodicidad del Mantenimiento" value="#{hvCT.hojaDeVida.periodicidadMantenimiento}"/>
+                                            <p:message for="inputPeriodicidadMantenimiento"/>                                         
                                         </div>
                                     </div>
 
@@ -673,12 +674,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Periodicidad de Calibración:</label>
+                                        <label  for="inputPeriodicidadCalibracion" class="control-label col-md-3 col-sm-3 col-xs-12">Ingrese la Peridicidad de Calibración:</label>
                                         <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Escriba la Periodicidad de Calibración"></input>
+                                            <p:inputText required="true" requiredMessage="Ingrese la Peridicidad de Calibración" class="form-control" id="inputPeriodicidadCalibracion" placeholder="Ingrese la Peridicidad de Calibración" value="#{hvCT.hojaDeVida.periodicidadCalibracion}"/>
+                                            <p:message for="inputPeriodicidadCalibracion"/>                                         
                                         </div>
                                     </div>
-
                                 </div>
 
                                 <div id="step-88">

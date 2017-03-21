@@ -18,7 +18,7 @@
                     <div class="col-md-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Consultar de Inventarios <small>Consulta y Edición de Inventarios</small></h2>
+                                <h2>Consultar Hojas de Vida <small>Consulta y Edición de Hojas de Vida</small></h2>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -35,37 +35,28 @@
                                                                 <p:ajax listener="{campoCT.buscarCampo()}" update="DTInventario" event="keyup"/>
                                                             </p:inputText><br/>
                                                         </div>-->
-                            <p:dataTable id="DTInventario" value="#{inventarioCT.inventarios}" var="inv"  
+                            <p:dataTable id="DTHojas" value="#{hvCT.hojasDeVida}" var="hoj"  
                                          rows="10"
                                          paginator="true"
                                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                          rowsPerPageTemplate="5,10,15"
                                          emptyMessage="Campos no registrados">
                                 <p:column headerText="Nombre" >
-                                    <h:outputLabel value="#{inv.equipo}"/>
-                                </p:column>
-
-                                <p:column headerText="Nro Inventario" >
-                                    <h:outputLabel value="#{inv.nroInventario}"/>
+                                    <h:outputLabel value="#{hoj.equipo}"/>
                                 </p:column>
                                 <p:column headerText="Marca" >
-                                    <h:outputLabel value="#{inv.marca.marca}"/>
+                                    <h:outputLabel value="#{hoj.marca}"/>
                                 </p:column>
                                 <p:column headerText="Modelo" >
-                                    <h:outputLabel value="#{inv.modelo.nombreModelo}"/>
+                                    <h:outputLabel value="#{hoj.modelo}"/>
                                 </p:column>
-                                <p:column headerText="Serie" >
-                                    <h:outputLabel value="#{inv.serie.numeroSerie}"/>
+                                <p:column headerText="Fabricante" >
+                                    <h:outputLabel value="#{hoj.fabricante}"/>
                                 </p:column>
-                                <p:column headerText="Servicio" >
-                                    <h:outputLabel value="#{inv.servicio.servicio}"/>
+                                <p:column headerText="Tel. Fabricante" >
+                                    <h:outputLabel value="#{hoj.telFabricante}"/>
                                 </p:column>
-                                <p:column headerText="Ubicación" >
-                                    <h:outputLabel value="#{inv.ubicacion.ubicacion}"/>
-                                </p:column>
-                                <p:column headerText="Area" >
-                                    <h:outputLabel value="#{inv.area.area}"/>
-                                </p:column>
+
                                 <p:column headerText="Editar" >
                                     <!--<h:outputLabel value="#{inv.estadoInventario.estadoInventario}"/>-->
                                     <input type="button" class="btn btn-success" value="Editar"></input>
@@ -76,12 +67,12 @@
                                 </p:column>
 
 
-<!--                                <p:column style="width: 60px">
-                                    <p:commandLink style="color: white; width: 100%" process="@this" update=":formularioRegistro" action="#{campoCT.seleccionarCRUD(1)}" title="Modificar" class="btn btn-block btn-info">
-                                        <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>                                                               
-                                        <i class="fa fa-pencil"></i> 
-                                    </p:commandLink>
-                                </p:column>-->
+                                <!--                                <p:column style="width: 60px">
+                                                                    <p:commandLink style="color: white; width: 100%" process="@this" update=":formularioRegistro" action="#{campoCT.seleccionarCRUD(1)}" title="Modificar" class="btn btn-block btn-info">
+                                                                        <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>                                                               
+                                                                        <i class="fa fa-pencil"></i> 
+                                                                    </p:commandLink>
+                                                                </p:column>-->
                                 <!--                               <p:column style="width: 60px">
                                                                     <p:commandLink style="color: white; width: 100%" action="#{campoCT.eliminar()}" onclick="PrimeFaces.monitorDownload(start, stop);" process="@this" update="@form" title="Eliminar" class="btn btn-block btn-danger">
                                                                         <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>
