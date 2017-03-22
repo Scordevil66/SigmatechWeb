@@ -41,49 +41,188 @@
 
                                     <p:tabView orientation="left">
                                         <p:tab title="Crear Marca">
+                                            <div class="x_title">
+                                                <h2>Registrar Marca</h2>
+
+                                                <div class="clearfix"></div>
+                                            </div>
                                             <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-                                                <h:outputText
-                                                    value="The story begins as Don Vito Corleone..." />
+
+                                                <div class="form-group">
+                                                    <label  for="inputNombre" style="min-width: 150px;" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Marca:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombre" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                                        <p:message for="inputNombre"/>                                         
+                                                    </div>
+                                                </div>
+
                                             </h:panelGrid>
                                         </p:tab>
                                         <p:tab title="Crear Modelo">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                                                <h:outputText value="Francis Ford Coppola's legendary..." />
-                                            </h:panelGrid>
+                                            <div class="x_title">
+                                                <h2>Registrar Modelo</h2>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+
+
+                                            <div class="form-group">
+
+
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-6">Marca:</label>
+
+                                                <div class="col-md-9 col-sm-9 col-xs-6">
+
+                                                    <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una marca" id="SMarca"  value="#{inventarioCT.marca.idMarca}"   >
+
+                                                        <f:selectItem itemLabel="Seleccione Marca" noSelectionOption="true" />
+                                                        <f:selectItems  value="#{marcaCT.marcas}" var="marca" itemLabel="#{marca.marca}" itemValue="#{marca.idMarca}"/>
+
+                                                        <f:ajax execute = "SMarca" render = "SMModelo" listener="#{inventarioCT.consultarModelos(inventarioCT.marca.idMarca)}" /> 
+                                                    </h:selectOneMenu>
+
+                                                    <p:message for="SMarca"/>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label  for="inputNombreModelo" style="min-width: 150px;" class="control-label col-md-3 col-sm-3 col-xs-6">Nombre Modelo:</label>
+                                                <div class="col-md-9 col-sm-9 col-xs-6">
+
+                                                    <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombreModelo" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                                    <p:message for="inputNombreModelo"/>                                         
+                                                </div>
+
+                                            </div>
+
                                         </p:tab>
                                         <p:tab title="Crear Serie">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
-                                            </h:panelGrid>
+                                            <div class="x_title">
+                                                <h2>Registrar Serie</h2>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+
+
+                                            <div class="form-group">
+
+
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Marca:</label>
+                                                <div class="col-md-9 col-sm-9 col-xs-12">
+
+                                                    <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una marca" id="SMarca1"  value="#{inventarioCT.marca.idMarca}"   >
+
+                                                        <f:selectItem itemLabel="Seleccione Marca" noSelectionOption="true" />
+                                                        <f:selectItems  value="#{marcaCT.marcas}" var="marca" itemLabel="#{marca.marca}" itemValue="#{marca.idMarca}"/>
+
+                                                        <f:ajax execute = "SMarca1" render = "SMModelo" listener="#{inventarioCT.consultarModelos(inventarioCT.marca.idMarca)}" /> 
+                                                    </h:selectOneMenu>
+
+                                                    <p:message for="SMarca1"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" >
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Modelo:</label>
+                                                <div class="col-md-9 col-sm-9 col-xs-12" >
+                                                    <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una modelo" id="SMModelo" value="#{inventarioCT.modelo.idModelo}" >
+                                                        <f:selectItem itemLabel="Seleccione Modelos" noSelectionOption="true"/>
+                                                        <f:selectItems value="#{inventarioCT.modelos}" var="modelo" itemLabel="#{modelo.nombreModelo}" itemValue="#{modelo.idModelo}"/>
+                                                        <f:ajax execute = "SMModelo" render = "SMSerie" listener="#{inventarioCT.consultarSeries(inventarioCT.modelo.idModelo)}" /> 
+                                                    </h:selectOneMenu>
+                                                    <p:message for="SMModelo"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label  for="inputNombreSerie" style="min-width: 150px;" class="control-label col-md-3 col-sm-3 col-xs-6">Nombre Serie:</label>
+                                                <div class="col-md-9 col-sm-9 col-xs-6">
+
+                                                    <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombreSerie" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                                    <p:message for="inputNombreSerie"/>                                         
+                                                </div>
+
+                                            </div>
                                         </p:tab>
                                         <p:tab title="Crear Ubicación">
+                                            <div class="x_title">
+                                                <h2>Registrar Ubicación</h2>
+
+                                                <div class="clearfix"></div>
+                                            </div>
                                             <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
+
+                                                <div class="form-group">
+                                                    <label  for="inputNombreUbicacion" style="min-width: 200px;" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Ubicación:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombreUbicacion" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                                        <p:message for="inputNombreUbicacion"/>                                         
+                                                    </div>
+                                                </div>
+
                                             </h:panelGrid>
                                         </p:tab>
                                         <p:tab title="Crear Area">
+                                            <div class="x_title">
+                                                <h2>Registrar Area</h2>
+
+                                                <div class="clearfix"></div>
+                                            </div>
                                             <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
+
+                                                <div class="form-group">
+                                                    <label  for="inputNombreArea" style="min-width: 200px;" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Area:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombreArea" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                                        <p:message for="inputNombreArea"/>                                         
+                                                    </div>
+                                                </div>
+
                                             </h:panelGrid>
                                         </p:tab>
                                         <p:tab title="Crear Estado Inv.">
+                                            <div class="x_title">
+                                                <h2>Registrar Estado Inventario</h2>
+
+                                                <div class="clearfix"></div>
+                                            </div>
                                             <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
+
+                                                <div class="form-group">
+                                                    <label  for="inputNombreEstado" style="min-width: 200px;" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Estado Inv.:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombreEstado" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                                        <p:message for="inputNombreEstado"/>                                         
+                                                    </div>
+                                                </div>
+
                                             </h:panelGrid>
                                         </p:tab>
-                                         <p:tab title="Crear Servicio">
+                                        <p:tab title="Crear Servicio">
+                                            <div class="x_title">
+                                                <h2>Registrar Servicio</h2>
+
+                                                <div class="clearfix"></div>
+                                            </div>
                                             <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
+
+                                                <div class="form-group">
+                                                    <label  for="inputNombreServicio" style="min-width: 200px;" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre Servicio:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombreServicio" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                                        <p:message for="inputNombreServicio"/>                                         
+                                                    </div>
+                                                </div>
+
                                             </h:panelGrid>
                                         </p:tab>
                                     </p:tabView>
+
+                                    <center> <div class="form-group" style="margin-top: 10px;">
+
+                                            <div class="col-md-9 col-sm-9 col-xs-12" >
+                                                <input class="btn btn-primary" value="Registrar" type="button"></input>                          
+                                            </div>
+                                        </div></center>
                                 </div>
 
                             </div>
@@ -105,47 +244,202 @@
 
                                     <p:tabView >
                                         <p:tab title="Marca">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-                                                <h:outputText
-                                                    value="The story begins as Don Vito Corleone..." />
-                                            </h:panelGrid>
+
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>Doe</td>
+                                                        <td>john@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mary</td>
+                                                        <td>Moe</td>
+                                                        <td>mary@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>July</td>
+                                                        <td>Dooley</td>
+                                                        <td>july@example.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                         </p:tab>
                                         <p:tab title="Modelo">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                                                <h:outputText value="Francis Ford Coppola's legendary..." />
-                                            </h:panelGrid>
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>Doe</td>
+                                                        <td>john@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mary</td>
+                                                        <td>Moe</td>
+                                                        <td>mary@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>July</td>
+                                                        <td>Dooley</td>
+                                                        <td>july@example.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </p:tab>
                                         <p:tab title="Serie">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
-                                            </h:panelGrid>
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>Doe</td>
+                                                        <td>john@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mary</td>
+                                                        <td>Moe</td>
+                                                        <td>mary@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>July</td>
+                                                        <td>Dooley</td>
+                                                        <td>july@example.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </p:tab>
                                         <p:tab title="Ubicación">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
-                                            </h:panelGrid>
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>Doe</td>
+                                                        <td>john@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mary</td>
+                                                        <td>Moe</td>
+                                                        <td>mary@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>July</td>
+                                                        <td>Dooley</td>
+                                                        <td>july@example.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </p:tab>
                                         <p:tab title="Area">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
-                                            </h:panelGrid>
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>Doe</td>
+                                                        <td>john@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mary</td>
+                                                        <td>Moe</td>
+                                                        <td>mary@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>July</td>
+                                                        <td>Dooley</td>
+                                                        <td>july@example.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </p:tab>
                                         <p:tab title="Estado Inv.">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
-                                            </h:panelGrid>
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>Doe</td>
+                                                        <td>john@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mary</td>
+                                                        <td>Moe</td>
+                                                        <td>mary@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>July</td>
+                                                        <td>Dooley</td>
+                                                        <td>july@example.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </p:tab>
-                                         <p:tab title="Servicio">
-                                            <h:panelGrid columns="2" cellpadding="10">
-                                                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                                                <h:outputText value="After a break of more than 15 years..." />
-                                            </h:panelGrid>
+                                        <p:tab title="Servicio">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                        <th>Prueba</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>Doe</td>
+                                                        <td>john@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mary</td>
+                                                        <td>Moe</td>
+                                                        <td>mary@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>July</td>
+                                                        <td>Dooley</td>
+                                                        <td>july@example.com</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </p:tab>
                                     </p:tabView>
                                 </div>

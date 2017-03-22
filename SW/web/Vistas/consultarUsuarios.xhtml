@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="./template.xhtml">
+
+        <ui:define name="content">
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <!-- top tiles -->
+                <form class="form-horizontal form-label-left">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Consultar Usuarios<small>Consulta y Edición de Usuarios</small></h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <!--                            <div align="right">
+                                                            <p:inputText class="form-control" placeholder="Buscar..." value="{campoCT.buscar}" style="width: 50%">
+                                                                <p:ajax listener="{campoCT.buscarCampo()}" update="DTInventario" event="keyup"/>
+                                                            </p:inputText><br/>
+                                                        </div>-->
+                            <p:dataTable id="DTHojas" value="#{hvCT.hojasDeVida}" var="hoj"  
+                                         rows="10"
+                                         paginator="true"
+                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                         rowsPerPageTemplate="5,10,15"
+                                         emptyMessage="Campos no registrados">
+                                <p:column headerText="Nombre" >
+                                    <h:outputLabel value="#{hoj.equipo}"/>
+                                </p:column>
+                                <p:column headerText="Teléfono" >
+                                    <h:outputLabel value="#{hoj.marca}"/>
+                                </p:column>
+                                <p:column headerText="Correo" >
+                                    <h:outputLabel value="#{hoj.modelo}"/>
+                                </p:column>
+                                <p:column headerText="Cargo" >
+                                    <h:outputLabel value="#{hoj.fabricante}"/>
+                                </p:column>
+                                <p:column headerText="Rol" >
+                                    <h:outputLabel value="#{hoj.telFabricante}"/>
+                                </p:column>
+
+                                <p:column headerText="Editar" >
+                                    <!--<h:outputLabel value="#{inv.estadoInventario.estadoInventario}"/>-->
+                                    <input type="button" class="btn btn-success" value="Editar"></input>
+                                </p:column>
+                                <p:column headerText="Eliminar" >
+                                    <input type="button" class="btn btn-danger" value="Eliminar"></input>
+                                    <!--<h:outputLabel value="#{inv.observaciones}"/>-->
+                                </p:column>
+
+
+                                <!--                                <p:column style="width: 60px">
+                                                                    <p:commandLink style="color: white; width: 100%" process="@this" update=":formularioRegistro" action="#{campoCT.seleccionarCRUD(1)}" title="Modificar" class="btn btn-block btn-info">
+                                                                        <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>                                                               
+                                                                        <i class="fa fa-pencil"></i> 
+                                                                    </p:commandLink>
+                                                                </p:column>-->
+                                <!--                               <p:column style="width: 60px">
+                                                                    <p:commandLink style="color: white; width: 100%" action="#{campoCT.eliminar()}" onclick="PrimeFaces.monitorDownload(start, stop);" process="@this" update="@form" title="Eliminar" class="btn btn-block btn-danger">
+                                                                        <f:setPropertyActionListener value="#{campo}" target="#{campoCT.campo}"/>
+                                                                        <i class="fa fa-trash"></i>                                                     
+                                                                    </p:commandLink>
+                                                                </p:column>-->
+                            </p:dataTable>
+
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </ui:define>
+
+    </ui:composition>
+
+
+</html>
+
+
+

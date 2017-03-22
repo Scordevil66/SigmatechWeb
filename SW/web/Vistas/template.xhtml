@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 
-        <title>prueba Alela! | </title>
+        <title>Sistema </title>
 
         <!-- Bootstrap -->
         <h:outputStylesheet name="./src/css/bootstrap/dist/css/bootstrap.min.css"/>
@@ -73,25 +73,25 @@
                                             <li><h:link value="Dashboard" outcome="index" /></li>
                                         </ul>
                                     </li>
-                                    <li><a><i class="fa fa-edit"></i> Inventario <span class="fa fa-chevron-down"></span></a>
+                                    <li><a><i class="fa fa-file"></i> Inventario <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><h:link value="Carga Manual" outcome="cargaManual" /></li>
                                             <li><h:link value="Consultar" outcome="consultarInventario" /></li>
                                         </ul>
                                     </li>
-                                    <li><a><i class="fa fa-desktop"></i> Hoja de Vida <span class="fa fa-chevron-down"></span></a>
+                                    <li><a><i class="fa fa-clipboard"></i> Hoja de Vida <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><h:link value="Carga Manual" outcome="cargaManualHV" /></li>
                                            <li><h:link value="Consultar" outcome="consultarHojaDeVida" /></li>
                                         </ul>
                                     </li>
-                                    <li><a><i class="fa fa-table"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                                    <li><a><i class="fa fa-user"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="#">Crear Usuarios</a></li>
-                                            <li><a href="#">Consultar</a></li>
+                                          <li><h:link value="Registro Usuario" outcome="registroUsuario" /></li>
+                                            <li><h:link value="Consultar" outcome="consultarUsuarios" /></li>
                                         </ul>
                                     </li>
-                                    <li><a><i class="fa fa-table"></i> Configuración <span class="fa fa-chevron-down"></span></a>
+                                    <li><a><i class="fa fa-wrench"></i> Configuración <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><h:link value="Ajustes" outcome="configuracion" /></li>
                                         </ul>

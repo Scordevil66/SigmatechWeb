@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="./template.xhtml">
+
+        <ui:define name="content">
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <!-- top tiles -->
+                <h:form id="formularioRegistro" class="form-horizontal form-label-left" enctype="multipart/form-data">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Registro de Usuarios</h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Datos básicos</h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <br />
+
+
+                                <div class="form-group">
+                                    <label  for="inputNombre" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombre" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                        <p:message for="inputNombre"/>                                         
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputTelefono" class="control-label col-md-3 col-sm-3 col-xs-12">Teléfono:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Ingrese el teléfono" class="form-control" id="inputTelefono" placeholder="Ingrese el teléfono" value="#{inventarioCT.inventario.nroInventario}"/>    
+
+                                        <p:message for="inputTelefono"/> 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCorreo" class="control-label col-md-3 col-sm-3 col-xs-12">Correo:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Ingrese correo" class="form-control" id="inputCorreo" placeholder="Ingrese correo" value="#{inventarioCT.inventario.area}"/>    
+
+                                        <p:message for="inputCorreo"/> 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCargo" class="control-label col-md-3 col-sm-3 col-xs-12">Cargo:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Ingrese el cargo" class="form-control" id="inputCargo" placeholder="Ingrese el cargo" value="#{inventarioCT.inventario.empresa}"/>    
+
+                                        <p:message for="inputCargo"/> 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Ubicación:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una ubicación" id="SUbicacion" value="#{inventarioCT.ubicacion.idUbicacion}">
+                                            <f:selectItem itemLabel="Seleccione Ubicación" noSelectionOption="true"/>
+                                            <f:selectItems value="#{inventarioCT.ubicaciones}" var="ubicacion" itemLabel="#{ubicacion.ubicacion}" itemValue="#{ubicacion.idUbicacion}"/>
+                                        </h:selectOneMenu>
+                                        <p:message for="SUbicacion"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Rol:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione el rol" id="SEstado" value="#{inventarioCT.estadoInventario.idEstado}">
+                                            <f:selectItem itemLabel="Seleccione el Rol" noSelectionOption="true"/>
+                                            <f:selectItems value="#{inventarioCT.estados}" var="estado" itemLabel="#{estado.estadoInventario}" itemValue="#{estado.idEstado}"/>
+                                        </h:selectOneMenu>
+                                        <p:message for="SEstado"/>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Imagen de Usuario</h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+
+                                <img src="../../resources/images/SinImagen.png" alt="..." width="400px;" height="400px;"></img>
+                                <br />
+                                <p:growl id="messages" showDetail="true" />
+                                <p:fileUpload fileUploadListener="#{fileUploadBean.handleFileUpload}"  
+                                              mode="advanced"  
+                                              update="messages"   
+                                              multiple="true"  
+                                              sizeLimit="5000000"   
+                                              allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Finalizar</h2>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <br />
+                                <center>   
+                                    <p:commandButton                         value="Aceptar" 
+                                                                             action="#{inventarioCT.registrarInventario()}" 
+                                                                             update=":formularioRegistro"
+                                                                             class="btn btn-primary"/>  
+                                    <p:button                         value="Cancelar"                                                                           
+                                                                      class="btn btn-primary"/> 
+                                </center>
+                            </div>
+                        </div>
+
+                    </div>
+                </h:form>
+            </div>
+
+            <!-- /page content -->
+
+
+
+        </ui:define>
+
+    </ui:composition>
+
+
+</html>
+
+
+
