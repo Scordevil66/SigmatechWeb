@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 public class ConexionSQL {
 
     //static String clave = "yU7eywfXILoZjtaD";
-    static String clave = "12345678";
+    static String clave = "";
     static Statement ST = null;
     static Connection cn = null;
     static String user = "";
