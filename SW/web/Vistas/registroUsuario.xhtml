@@ -41,14 +41,14 @@
                                 <div class="form-group">
                                     <label  for="inputNombre" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombre" placeholder="Nombre" value="#{inventarioCT.inventario.equipo}"/>
+                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputNombre" placeholder="Nombre" value="#{usuarioCT.usuario.nombreUsuario}"/>
                                         <p:message for="inputNombre"/>                                         
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputTelefono" class="control-label col-md-3 col-sm-3 col-xs-12">Teléfono:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <p:inputText required="true" requiredMessage="Ingrese el teléfono" class="form-control" id="inputTelefono" placeholder="Ingrese el teléfono" value="#{inventarioCT.inventario.nroInventario}"/>    
+                                        <p:inputText required="true" requiredMessage="Ingrese el teléfono" class="form-control" id="inputTelefono" placeholder="Ingrese el teléfono" value="#{usuarioCT.usuario.telefono}"/>    
 
                                         <p:message for="inputTelefono"/> 
                                     </div>
@@ -56,20 +56,34 @@
                                 <div class="form-group">
                                     <label for="inputCorreo" class="control-label col-md-3 col-sm-3 col-xs-12">Correo:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <p:inputText required="true" requiredMessage="Ingrese correo" class="form-control" id="inputCorreo" placeholder="Ingrese correo" value="#{inventarioCT.inventario.area}"/>    
+                                        <p:inputText required="true" requiredMessage="Ingrese correo" class="form-control" id="inputCorreo" placeholder="Ingrese correo" value="#{usuarioCT.usuario.correo}"/>    
 
                                         <p:message for="inputCorreo"/> 
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputCargo" class="control-label col-md-3 col-sm-3 col-xs-12">Cargo:</label>
+                                    <label  for="inputUsuario" class="control-label col-md-3 col-sm-3 col-xs-12">Usuario:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <p:inputText required="true" requiredMessage="Ingrese el cargo" class="form-control" id="inputCargo" placeholder="Ingrese el cargo" value="#{inventarioCT.inventario.empresa}"/>    
-
-                                        <p:message for="inputCargo"/> 
+                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputUsuario" placeholder="Ingrese el usuario" value="#{usuarioCT.usuario.usuarioAcceso}"/>
+                                        <p:message for="inputUsuario"/>                                         
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label  for="inputContrasena" class="control-label col-md-3 col-sm-3 col-xs-12">Contraseña:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Nombre" class="form-control" id="inputContrasena" placeholder="Ingrese la contraseña" value="#{usuarioCT.usuario.contrasena}"/>
+                                        <p:message for="inputContrasena"/>                                         
+                                    </div>
+                                </div>
+<!--                                <div class="form-group">
+                                    <label for="inputCargo" class="control-label col-md-3 col-sm-3 col-xs-12">Cargo:</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <p:inputText required="true" requiredMessage="Ingrese el cargo" class="form-control" id="inputCargo" placeholder="Ingrese el cargo" value="#{usuarioCT.usuario}"/>    
+
+                                        <p:message for="inputCargo"/> 
+                                    </div>
+                                </div>-->
+<!--                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Ubicación:</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                         <h:selectOneMenu class="form-control" required="true" requiredMessage="Seleccione una ubicación" id="SUbicacion" value="#{inventarioCT.ubicacion.idUbicacion}">
@@ -89,7 +103,7 @@
                                         </h:selectOneMenu>
                                         <p:message for="SEstado"/>
                                     </div>
-                                </div>
+                                </div>-->
 
 
                             </div>
@@ -110,12 +124,12 @@
                                 <img src="../../resources/images/SinImagen.png" alt="..." width="400px;" height="400px;"></img>
                                 <br />
                                 <p:growl id="messages" showDetail="true" />
-                                <p:fileUpload fileUploadListener="#{fileUploadBean.handleFileUpload}"  
+<!--                                <p:fileUpload fileUploadListener="{fileUploadBean.handleFileUpload}"  
                                               mode="advanced"  
                                               update="messages"   
                                               multiple="true"  
                                               sizeLimit="5000000"   
-                                              allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                                              allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />-->
 
 
                             </div>
@@ -134,7 +148,7 @@
                                 <br />
                                 <center>   
                                     <p:commandButton                         value="Aceptar" 
-                                                                             action="#{inventarioCT.registrarInventario()}" 
+                                                                             action="#{usuarioCT.registrarUsuario()}" 
                                                                              update=":formularioRegistro"
                                                                              class="btn btn-primary"/>  
                                     <p:button                         value="Cancelar"                                                                           

@@ -5,11 +5,13 @@
  */
 package com.app.models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public class Ubicacion_TO {
+public class Ubicacion_TO implements Serializable{
 
     private int idUbicacion;
 

@@ -32,4 +32,9 @@
         <managed-bean-class>com.app.controller.HojaDeVidaController</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>usuarioCT</managed-bean-name>
+        <managed-bean-class>com.app.controller.UsuarioController</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
 </faces-config>

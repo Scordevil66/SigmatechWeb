@@ -36,7 +36,8 @@ public class HojaDeVidaController {
     }
 
     @PostConstruct
-    public void init() {
+    public void init() 
+    {
 
         try {
             hojasDeVida = this.consultarHojasDeVida();

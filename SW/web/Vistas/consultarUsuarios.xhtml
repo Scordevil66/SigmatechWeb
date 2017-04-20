@@ -35,27 +35,27 @@
                                                                 <p:ajax listener="{campoCT.buscarCampo()}" update="DTInventario" event="keyup"/>
                                                             </p:inputText><br/>
                                                         </div>-->
-                            <p:dataTable id="DTHojas" value="#{hvCT.hojasDeVida}" var="hoj"  
+                            <p:dataTable id="DTHojas" value="#{usuarioCT.usuarios}" var="usu"  
                                          rows="10"
                                          paginator="true"
                                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                          rowsPerPageTemplate="5,10,15"
                                          emptyMessage="Campos no registrados">
                                 <p:column headerText="Nombre" >
-                                    <h:outputLabel value="#{hoj.equipo}"/>
+                                    <h:outputLabel value="#{usu.nombreUsuario}"/>
                                 </p:column>
                                 <p:column headerText="Teléfono" >
-                                    <h:outputLabel value="#{hoj.marca}"/>
+                                    <h:outputLabel value="#{usu.telefono}"/>
                                 </p:column>
                                 <p:column headerText="Correo" >
-                                    <h:outputLabel value="#{hoj.modelo}"/>
+                                    <h:outputLabel value="#{usu.correo}"/>
                                 </p:column>
-                                <p:column headerText="Cargo" >
+<!--                                <p:column headerText="Cargo" >
                                     <h:outputLabel value="#{hoj.fabricante}"/>
                                 </p:column>
                                 <p:column headerText="Rol" >
                                     <h:outputLabel value="#{hoj.telFabricante}"/>
-                                </p:column>
+                                </p:column>-->
 
                                 <p:column headerText="Editar" >
                                     <!--<h:outputLabel value="#{inv.estadoInventario.estadoInventario}"/>-->

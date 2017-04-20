@@ -246,13 +246,13 @@ public class InventarioController {
         try {
 
             String sql = "INSERT INTO `biomedic`.`inventario` "
-                    + " (`varEquipo`, `intIdMarca`, `intIdModelo`, `intIdSerie`, "
+                    + " (`varEquipo`, `intIdMarca`, `intIdModelo`, `varSerie`, "
                     + "  `varNumInvent`, `intIdEstadoInv`, `intIdServicio`, "
                     + "   `intIdUbicacion`, `longfoto`, `intEmpresa`, `intArea`,  "
                     + "	`varObservaciones`)  "
                     + "	VALUES "
                     + "	 ('" + inventario.getEquipo() + "', '" + getMarca().getIdMarca() + "', "
-                    + "'" + getModelo().getIdModelo() + "', '" + getSerie().getIdSerie() + "',"
+                    + "'" + getModelo().getIdModelo() + "', '" + getSerie().getNumeroSerie()+ "',"
                     + " '" + inventario.getNroInventario() + "', '" + getEstadoInventario().getIdEstado() + "', "
                     + "'" + getServicio().getIdServicio() + "',  "
                     + "	 '" + getUbicacion().getIdUbicacion() + "', '', "
@@ -299,14 +299,13 @@ public class InventarioController {
         try {
 
             String sql = "SELECT  i.`id`,  i.`varEquipo`,  m.varNombreMarca,  mo.varNombreModelo, "
-                    + " s.varNumSerie,  i.`varNumInvent`, e.varEstadoInventario,  se.varNomServicio,"
+                    + " i.varSerie,  i.`varNumInvent`, e.varEstadoInventario,  se.varNomServicio,"
                     + "  u.varNomUbicacion,  LEFT(i.`longfoto`, 256),  i.`intEmpresa`,  a.varNomArea,"
                     + "  i.`varObservaciones` "
-                    + " FROM `inventario` as i, marca as m, modelo as mo, series as s,"
+                    + " FROM `inventario` as i, marca as m, modelo as mo, "
                     + " servicios as se, ubicacion as u, estadoinventario as e, area as a "
                     + " where i.intIdMarca = m.intIdMarca\n"
                     + "                     and i.intIdModelo = mo.intIdModelo\n"
-                    + "                     and i.intIdSerie = s.intIdSeries\n"
                     + "                     and i.intIdServicio = se.intIdServicios\n"
                     + "                     and i.intIdUbicacion = u.intIdUbicacion\n"
                     + "                     and i.intIdEstadoInv = e.intId\n"
